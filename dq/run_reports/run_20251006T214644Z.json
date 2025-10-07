@@ -1,0 +1,120 @@
+{
+  "schema_errors": [],
+  "validation_warnings": [],
+  "validation_errors": [],
+  "anomaly_outliers": {
+    "total_amount": {
+      "count": 34,
+      "bounds": [
+        -171.89249999999998,
+        417.9475
+      ]
+    }
+  },
+  "drift": {
+    "total_amount_mean_delta": -1656.0302016666667,
+    "status_psi": 0.0695
+  },
+  "transform_audit": {
+    "assign": {
+      "status": 0,
+      "dq_alert": 2000
+    },
+    "impute": {
+      "unit_price": 0,
+      "quantity": 0
+    },
+    "compute": {
+      "total_amount": 0
+    }
+  },
+  "output_file": "/Users/mozesrahangmetan/Downloads/sala_dq_compare_3_12_llm_v1_4_4/data/curated.csv",
+  "source_file": "/Users/mozesrahangmetan/Downloads/sala_dq_compare_3_12_llm_v1_4_4/data/uploads/upload_20251006T214644Z.csv",
+  "llm": {
+    "insight": {
+      "mode": "llm",
+      "count": 7
+    },
+    "suggestions": [
+      {
+        "id": "e95fa4f66f",
+        "title": "High missing email ratio",
+        "rule": {
+          "if": "customer_email IS NULL",
+          "then": "assign dq_flag = 'missing_contact'"
+        },
+        "reason": "51% of customer_email is missing.",
+        "confidence": 0.9,
+        "source": "heuristic"
+      },
+      {
+        "id": "5416b039c0",
+        "title": "Future dates present",
+        "rule": {
+          "if": "order_date > '2025-10-06'",
+          "then": "assign dq_flag = 'future_date_anomaly'"
+        },
+        "reason": "1047 records have order_date in the future.",
+        "confidence": 0.88,
+        "source": "heuristic"
+      },
+      {
+        "id": "8ae2351c40",
+        "title": "Negative total amounts",
+        "rule": {
+          "if": "total_amount < 0",
+          "then": "assign dq_flag = 'negative_amount'"
+        },
+        "reason": "8 rows have total_amount < 0.",
+        "confidence": 0.89,
+        "source": "heuristic"
+      },
+      {
+        "id": "2ff85c65f7",
+        "title": "Zero or negative unit price",
+        "rule": {
+          "if": "unit_price <= 0",
+          "then": "assign dq_flag = 'price_outlier_low'"
+        },
+        "reason": "9 rows with unit_price <= 0.",
+        "confidence": 0.9,
+        "source": "heuristic"
+      },
+      {
+        "id": "6bab655d28",
+        "title": "Extreme unit price",
+        "rule": {
+          "if": "unit_price > 1000",
+          "then": "assign dq_flag = 'price_outlier_high'"
+        },
+        "reason": "1 rows with unit_price > 1000.",
+        "confidence": 0.9,
+        "source": "heuristic"
+      },
+      {
+        "id": "9521dc5286",
+        "title": "Unexpected currency: YEN",
+        "rule": {
+          "if": "currency == 'YEN'",
+          "then": "assign dq_alert = 'unexpected_currency'"
+        },
+        "reason": "108 rows contain currency=YEN.",
+        "confidence": 0.86,
+        "source": "heuristic"
+      },
+      {
+        "id": "8de9ac7ba3",
+        "title": "Unexpected currency: BTC",
+        "rule": {
+          "if": "currency == 'BTC'",
+          "then": "assign dq_alert = 'unexpected_currency'"
+        },
+        "reason": "94 rows contain currency=BTC.",
+        "confidence": 0.86,
+        "source": "heuristic"
+      }
+    ],
+    "auto_applied": true
+  },
+  "report_name": "run_20251006T214644Z.json"
+}

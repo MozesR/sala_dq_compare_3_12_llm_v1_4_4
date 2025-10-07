@@ -1,0 +1,7 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Schema</title><link rel="stylesheet" href="/static/style.css"></head>
+<body><header><h1>🧩 Schema Explorer</h1><p><a href="/">Rules</a> • <a href="/dashboard">Dashboard</a> • <a href="/history">Run History</a> • <a href="/compare">Compare</a> • <a href="/schema">Schema</a></p></header>
+<main><section class="panel" style="grid-column:1/-1"><h2>Latest Curated</h2><table class="table" id="schema"><thead><tr><th>Column</th><th>Dtype</th><th>Null %</th><th>Unique</th></tr></thead><tbody></tbody></table></section></main>
+<script>
+async function load(){const r=await fetch('/api/schema');const j=await r.json();const tb=document.querySelector('#schema tbody');tb.innerHTML='';(j.columns||[]).forEach(c=>{const tr=document.createElement('tr');tr.innerHTML=`<td>${c.name}</td><td>${c.dtype}</td><td>${(c.null_pct??0).toFixed(2)}%</td><td>${c.unique}</td>`;tb.appendChild(tr);});}
+load();
+</script></body></html>

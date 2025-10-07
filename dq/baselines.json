@@ -1,0 +1,177 @@
+{
+  "runs": [
+    {
+      "value_counts": {
+        "status": {
+          "unknown": 544,
+          "closed": 28,
+          "open": 28
+        }
+      },
+      "means": {
+        "total_amount": 100.0
+      }
+    },
+    {
+      "value_counts": {
+        "status": {
+          "unknown": 544,
+          "closed": 28,
+          "open": 28
+        }
+      },
+      "means": {
+        "total_amount": 100.0
+      }
+    },
+    {
+      "value_counts": {
+        "status": {
+          "processing": 140,
+          "open": 138,
+          "closed": 122
+        }
+      },
+      "means": {
+        "total_amount": 100.0
+      }
+    },
+    {
+      "value_counts": {
+        "status": {
+          "open": 817,
+          "closed": 764,
+          "pending": 419
+        }
+      },
+      "means": {
+        "total_amount": 127.85311999999999
+      }
+    },
+    {
+      "value_counts": {
+        "status": {
+          "unknown": 812,
+          "open": 619,
+          "closed": 393,
+          "pending": 176
+        }
+      },
+      "means": {
+        "total_amount": 308.47252000000003
+      }
+    },
+    {
+      "value_counts": {
+        "status": {
+          "open": 817,
+          "closed": 764,
+          "pending": 419
+        }
+      },
+      "means": {
+        "total_amount": 127.85311999999999
+      }
+    },
+    {
+      "value_counts": {
+        "status": {
+          "unknown": 812,
+          "open": 619,
+          "closed": 393,
+          "pending": 176
+        }
+      },
+      "means": {
+        "total_amount": 308.47252000000003
+      }
+    },
+    {
+      "value_counts": {
+        "status": {
+          "unknown": 812,
+          "open": 619,
+          "closed": 393,
+          "pending": 176
+        }
+      },
+      "means": {
+        "total_amount": 308.47252000000003
+      }
+    },
+    {
+      "value_counts": {
+        "status": {
+          "open": 794,
+          "unknown": 705,
+          "closed": 396,
+          "pending": 105
+        }
+      },
+      "means": {
+        "total_amount": 165.99758000000003
+      }
+    },
+    {
+      "value_counts": {
+        "status": {
+          "open": 1019,
+          "closed": 595,
+          "pending": 386
+        }
+      },
+      "means": {
+        "total_amount": 162.96222500000002
+      }
+    },
+    {
+      "value_counts": {
+        "status": {
+          "open": 660,
+          "closed": 521,
+          "pending": 224,
+          "unknown": 95
+        }
+      },
+      "means": {
+        "total_amount": 1818.9924266666667
+      }
+    },
+    {
+      "value_counts": {
+        "status": {
+          "open": 1019,
+          "closed": 595,
+          "pending": 386
+        }
+      },
+      "means": {
+        "total_amount": 162.96222500000002
+      }
+    },
+    {
+      "value_counts": {
+        "status": {
+          "closed": 94,
+          "open": 67,
+          "pending": 39
+        }
+      },
+      "means": {
+        "total_amount": 106.2562
+      }
+    },
+    {
+      "value_counts": {
+        "status": {
+          "open": 98,
+          "closed": 79,
+          "pending": 23
+        }
+      },
+      "means": {
+        "total_amount": 106.85825000000001
+      }
+    }
+  ]
+}

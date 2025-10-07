@@ -1,0 +1,7 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Run</title><link rel="stylesheet" href="/static/style.css"></head>
+<body><header><h1>📄 Run Report</h1><p><a href="/">Rules</a> • <a href="/dashboard">Dashboard</a> • <a href="/history">Run History</a> • <a href="/compare">Compare</a> • <a href="/schema">Schema</a></p></header>
+<main><section class="panel"><h2>Audit</h2><table class="table" id="audit"><thead><tr><th>Action</th><th>Column</th><th>Rows</th></tr></thead><tbody></tbody></table></section><section class="panel"><h2>Raw JSON</h2><pre id="json" style="white-space:pre-wrap"></pre></section></main>
+<script>
+async function load(){const name=location.pathname.split('/').pop();const r=await fetch('/api/report/'+name);const j=await r.json();document.getElementById('json').textContent=JSON.stringify(j,null,2);const tb=document.querySelector('#audit tbody');tb.innerHTML='';['assign','impute','compute'].forEach(a=>{Object.entries((j.transform_audit||{})[a]||{}).forEach(([col,c])=>{const tr=document.createElement('tr');tr.innerHTML=`<td>${a}</td><td>${col}</td><td>${c}</td>`;tb.appendChild(tr);});});}
+load();
+</script></body></html>

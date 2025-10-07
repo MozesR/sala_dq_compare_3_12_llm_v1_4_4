@@ -1,0 +1,34 @@
+{
+  "schema_errors": [],
+  "validation_warnings": [],
+  "validation_errors": [],
+  "anomaly_outliers": {
+    "total_amount": {
+      "count": 18,
+      "bounds": [
+        -252.52250000000006,
+        776.2775000000001
+      ]
+    }
+  },
+  "drift": {
+    "total_amount_mean_delta": 180.61940000000004,
+    "status_psi": 0.099
+  },
+  "transform_audit": {
+    "assign": {
+      "status": 812,
+      "dq_alert": 2000
+    },
+    "impute": {
+      "unit_price": 0,
+      "quantity": 0
+    },
+    "compute": {
+      "total_amount": 0
+    }
+  },
+  "output_file": "/Users/mozesrahangmetan/Downloads/sala_dq_compare_3_12_llm_v1_4_4/data/curated.csv",
+  "source_file": "/Users/mozesrahangmetan/Downloads/sala_dq_compare_3_12_llm_v1_4_4/data/uploads/upload_20251006T211531Z.csv",
+  "report_name": "run_20251006T211531Z.json"
+}

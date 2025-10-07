@@ -1,0 +1,9 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Compare</title><link rel="stylesheet" href="/static/style.css"><script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script><script src="/static/compare.js" defer></script></head>
+<body><header><h1>🆚 Compare Runs (v1.4.4)</h1><p><a href="/">Rules</a> • <a href="/dashboard">Dashboard</a> • <a href="/history">Run History</a> • <a href="/compare">Compare</a> • <a href="/schema">Schema</a></p></header>
+<main>
+<section class="panel" style="grid-column:1/-1"><h2>Select Runs</h2><div class="row"><div class="col"><label>Run A</label><br/><select id="runA" class="select"></select></div><div class="col"><label>Run B</label><br/><select id="runB" class="select"></select></div><div class="col" style="align-self:end"><button id="compareBtn">Compare</button> <span id="status"></span></div></div></section>
+<section class="panel"><h2>Audit Δ</h2><div class="chart-wrap"><canvas id="auditChart"></canvas></div></section>
+<section class="panel"><h2>Drift Δ</h2><div class="chart-wrap"><canvas id="driftChart"></canvas></div></section>
+<section class="panel"><h2>Outliers Δ</h2><div class="chart-wrap"><canvas id="outlierChart"></canvas></div></section>
+<section class="panel" style="grid-column:1/-1"><h2>Details</h2><table class="table" id="details"><thead><tr><th>Metric</th><th>Run A</th><th>Run B</th><th>Δ</th></tr></thead><tbody></tbody></table></section>
+</main></body></html>

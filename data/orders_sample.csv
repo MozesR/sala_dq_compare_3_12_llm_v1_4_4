@@ -1,0 +1,2 @@
+order_id,order_date,customer_id,status,quantity,unit_price,currency,total_amount
+1,2025-10-06,C001,open,2,10.00,USD,20.00

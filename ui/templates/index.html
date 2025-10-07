@@ -1,0 +1,25 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Rules & Suggestions</title><link rel="stylesheet" href="/static/style.css"></head>
+<body><header><h1>⚙️ Rules & Suggestions (v1.4.4)</h1><p><a href="/">Rules</a> • <a href="/dashboard">Dashboard</a> • <a href="/history">Run History</a> • <a href="/compare">Compare</a> • <a href="/schema">Schema</a></p></header>
+<main>
+<section class="panel"><h2>Edit rules.json</h2>
+<div class="toolbar" style="display:flex;gap:12px;align-items:center;margin:8px 0">
+  <button id="save">Save Rules</button>
+  <label style="display:flex;gap:6px;align-items:center;">
+    <input type="checkbox" id="toggleInsights"><span>Show last suggestion details</span>
+  </label>
+  <span id="status" style="margin-left:8px;color:#93c5fd">Loading…</span>
+</div>
+<textarea id="rules" placeholder="Loading rules.json…"></textarea>
+<div id="insightPanel" style="display:none;border:1px solid #334155;border-radius:12px;padding:12px;background:#0b1320;margin-top:10px">
+  <h3 style="margin:0 0 8px 0;font-size:14px;color:#bfdbfe">Last LLM/Heuristic Suggestions</h3>
+  <div id="insightBody">No suggestions yet.</div>
+</div>
+<p style="margin-top:6px;color:#94a3b8">File: <code>dq/rules.json</code></p>
+</section>
+<section class="panel"><h2>LLM Suggestions</h2>
+<div class="placeholder" id="llmHint">Enable LLM in <code>.env</code> to receive semantic suggestions. Heuristic suggestions may still appear.</div>
+<table class="table" id="sugTbl"><thead><tr><th>Title</th><th>Reason</th><th>Rule</th><th>Confidence</th><th></th></tr></thead><tbody><tr><td colspan="5">Loading…</td></tr></tbody></table>
+</section>
+</main>
+<script src="/static/rules_enhanced.js"></script>
+</body></html>

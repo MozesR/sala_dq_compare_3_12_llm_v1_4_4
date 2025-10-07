@@ -1,0 +1,61 @@
+{
+  "schema_errors": [],
+  "validation_warnings": [],
+  "validation_errors": [],
+  "anomaly_outliers": {
+    "total_amount": {
+      "count": 0,
+      "bounds": [
+        100.0,
+        100.0
+      ]
+    }
+  },
+  "drift": {},
+  "transform_audit": {
+    "assign": {
+      "status": 544
+    },
+    "impute": {
+      "unit_price": 0,
+      "quantity": 0
+    },
+    "compute": {
+      "total_amount": 600
+    }
+  },
+  "output_file": "/Users/mozesrahangmetan/Downloads/sala_dq_compare_3_12_llm_v1_4_4/data/curated.csv",
+  "source_file": "/Users/mozesrahangmetan/Downloads/sala_dq_compare_3_12_llm_v1_4_4/data/uploads/upload_20251006T210944Z.csv",
+  "llm": {
+    "insight": {
+      "mode": "llm",
+      "count": 2
+    },
+    "suggestions": [
+      {
+        "id": "694859cf32",
+        "title": "Guard status assignment to order-like rows only",
+        "rule": {
+          "if": "order_id IS NOT NULL and status IS NULL",
+          "then": "assign status = 'unknown'"
+        },
+        "reason": "High volume of status assignment suggests non-order datasets included.",
+        "confidence": 0.9,
+        "source": "llm"
+      },
+      {
+        "id": "40e8f06fd5",
+        "title": "Drift alert rule suggestion",
+        "rule": {
+          "if": "true",
+          "then": "assign dq_alert = 'mean_total_amount_shift'"
+        },
+        "reason": "Detected a large mean shift in total_amount compared to baseline.",
+        "confidence": 0.87,
+        "source": "llm"
+      }
+    ],
+    "auto_applied": true
+  },
+  "report_name": "run_20251006T210944Z.json"
+}
