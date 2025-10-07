@@ -1,3 +1,7 @@
+# ignore real env files
 .env
-.env.*       
-1).example
+.env.*
+
+# but DO commit templates
+!.env.example
+!.env.*.example
