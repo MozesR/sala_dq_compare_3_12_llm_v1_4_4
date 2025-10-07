@@ -60,6 +60,7 @@ This project presents a lightweight, production-oriented implementation of a **S
   ENABLE_LLM=false
   AUTO_ACCEPT_LLM_RULES=false
   OPENAI_API_KEY=your_key_here
+  BASELINE_HISTORY_WINDOW=50
   ```
 
 ---
