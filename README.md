@@ -142,7 +142,7 @@ By adopting SALA, DQ evolves from a static rulebook to a learning system that **
 ### Quick Start (Optional scaffolding)
 ```bash
 # 1) Configure environment
-cp .env.example .env  # set ENABLE_LLM / AUTO_ACCEPT_LLM_RULES / OPENAI_API_KEY
+cp .env.example .env  # set ENABLE_LLM / AUTO_ACCEPT_LLM_RULES / OPENAI_API_KEY / BASELINE_HISTORY_WINDOW
 
 
 ```
@@ -172,4 +172,5 @@ Open: `/` • `/dashboard` • `/history` • `/compare` • `/schema`
 ENABLE_LLM=true
 AUTO_ACCEPT_LLM_RULES=true   # optional (auto-apply confident rules)
 OPENAI_API_KEY=yourkeyhere
+BASELINE_HISTORY_WINDOW=65  # optional
 ```
