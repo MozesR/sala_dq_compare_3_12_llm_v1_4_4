@@ -61,18 +61,6 @@
     {
       "if": "currency == 'BTC'",
       "then": "assign dq_alert = 'unexpected_currency'"
-    },
-    {
-      "if": "order_date > '2025-10-07'",
-      "then": "assign dq_flag = 'future_date_anomaly'"
-    },
-    {
-      "if": "currency == 'AUD'",
-      "then": "assign dq_alert = 'unexpected_currency'"
-    },
-    {
-      "if": "currency == 'JPY'",
-      "then": "assign dq_alert = 'unexpected_currency'"
     }
   ]
 }

@@ -1,0 +1,77 @@
+{
+  "schema_errors": [],
+  "validation_warnings": [],
+  "validation_errors": [],
+  "anomaly_outliers": {
+    "total_amount": {
+      "count": 62,
+      "bounds": [
+        -717.59,
+        1530.33
+      ]
+    }
+  },
+  "drift": {
+    "total_amount_mean_delta": 1712.1341766666667,
+    "status_psi": 0.05
+  },
+  "transform_audit": {
+    "assign": {
+      "status": 95,
+      "dq_alert": 1572,
+      "dq_flag": 964
+    },
+    "impute": {
+      "unit_price": 0,
+      "quantity": 0
+    },
+    "compute": {
+      "total_amount": 0
+    }
+  },
+  "output_file": "/Users/mozesrahangmetan/Downloads/sala_dq_compare_3_12_llm_v1_4_4/data/curated.csv",
+  "source_file": "/Users/mozesrahangmetan/Downloads/sala_dq_compare_3_12_llm_v1_4_4/data/uploads/upload_20251007T075956Z.csv",
+  "llm": {
+    "insight": {
+      "mode": "llm",
+      "count": 3
+    },
+    "suggestions": [
+      {
+        "id": "406e8db2c1",
+        "title": "Future dates present",
+        "rule": {
+          "if": "order_date > '2025-10-07'",
+          "then": "assign dq_flag = 'future_date_anomaly'"
+        },
+        "reason": "304 records have order_date in the future.",
+        "confidence": 0.88,
+        "source": "heuristic"
+      },
+      {
+        "id": "d64de3d17f",
+        "title": "Unexpected currency: AUD",
+        "rule": {
+          "if": "currency == 'AUD'",
+          "then": "assign dq_alert = 'unexpected_currency'"
+        },
+        "reason": "60 rows contain currency=AUD.",
+        "confidence": 0.86,
+        "source": "heuristic"
+      },
+      {
+        "id": "02e1d046e8",
+        "title": "Unexpected currency: JPY",
+        "rule": {
+          "if": "currency == 'JPY'",
+          "then": "assign dq_alert = 'unexpected_currency'"
+        },
+        "reason": "53 rows contain currency=JPY.",
+        "confidence": 0.86,
+        "source": "heuristic"
+      }
+    ],
+    "auto_applied": true
+  },
+  "report_name": "run_20251007T075956Z.json"
+}

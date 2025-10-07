@@ -172,6 +172,19 @@
       "means": {
         "total_amount": 106.85825000000001
       }
+    },
+    {
+      "value_counts": {
+        "status": {
+          "open": 660,
+          "closed": 521,
+          "pending": 224,
+          "unknown": 95
+        }
+      },
+      "means": {
+        "total_amount": 1818.9924266666667
+      }
     }
   ]
 }
