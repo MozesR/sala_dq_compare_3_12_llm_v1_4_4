@@ -173,5 +173,5 @@ Open: `/` • `/dashboard` • `/history` • `/compare` • `/schema`
 ENABLE_LLM=true
 AUTO_ACCEPT_LLM_RULES=true   # optional (auto-apply confident rules)
 OPENAI_API_KEY=yourkeyhere
-BASELINE_HISTORY_WINDOW=65  # optional
+BASELINE_HISTORY_WINDOW=50  # optional
 ```
